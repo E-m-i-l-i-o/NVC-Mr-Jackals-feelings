@@ -1,3 +1,5 @@
+const board = document.querySelector("#board")
+
 class Player {
     constructor (){
         this.height = 3;
@@ -23,8 +25,8 @@ class Player {
 
 
                  //step3: append to the dom: `parentElm.appendChild()`. By adding we are making the player visible
-                const parentElm = document.getElementById("board");
-                parentElm.appendChild(this.domElement);
+                // const parentElm = document.getElementById("board");
+                board.appendChild(this.domElement);
 
 
     }
@@ -115,7 +117,7 @@ const obstaclesArr = []; //outside so that it can be accessed from several sibli
 setInterval(() => {
     const newObstacle = new Obstacles();
     obstaclesArr.push(newObstacle);
-}, 3000);
+}, 1000);
 
 // move those obstacles
 setInterval(()=>{
@@ -127,7 +129,8 @@ setInterval(()=>{
             obstacleItem.positionY < player.positionY + player.height &&
             obstacleItem.height + obstacleItem.positionY > player.positionY) {
             console.log("game over my fren");
-            location.href= 'game-over.html' //  send player to start again
+            gameOver()
+            // location.href= 'game-over.html' //  send player to start again
             }
             //detect if obstacle needs to be removed once out of sight from the viewport. for that obstacle first needs to reach  the Y axis = 0 adn then we substract teh heigth of the obstacle, so taht it dissapears once we dont see it
             if (obstacleItem.positionY < 0 - obstacleItem.height) {
@@ -145,6 +148,120 @@ setInterval(()=>{
 
 },200);
 
+
+function gameOver(){
+    const divGameOver = document.querySelector("#game-over")
+    board.style.display = "none"
+    divGameOver.style.display = "block"
+}
+
+
+// *********************
+// *********************
+// *********************
+// *********************
+// *********************
+
+
+
+
+class Friends {
+    
+    constructor (){
+        this.width = 10;
+        this.height = 3; 
+        this.positionX = Math.floor(Math.random()* 100 - this.width);
+        this.positionY = 100;
+
+
+        this.domElement = null;
+
+        this.createDomElement();
+    }
+    createDomElement() {
+         // step1: create the element
+         this.domElement = document.createElement('div');
+
+         // step2: add content or modify (ex. innerHTML...)
+         this.domElement.className = 'friend';
+         this.domElement.style.width = this.width + 'vw';
+         this.domElement.style.height = this.height + "vh";
+         this.domElement.style.left = this.positionX +"vw";
+         this.domElement.style.bottom = this.positionY + 'vh';
+         this.domElement.style.backgroundColor = 'green'
+         this.domElement.style.position = 'absolute'
+ 
+         //step3: append to the dom: `parentElm.appendChild()`
+        const parentElm = document.getElementById('board') 
+         parentElm.appendChild(this.domElement);
+     }
+     moveDown(){
+         this.positionY--;
+         this.domElement.style.bottom = this.positionY + "vh";
+
+    }
+
+}
+
+//create new friends
+const friendsArr = []; //outside so that it can be accessed from several siblings
+
+setInterval(() => {
+    const newFriend = new Friends();
+    friendsArr.push(newFriend);
+}, 4000);
+
+// move those friends
+setInterval(()=>{
+    friendsArr.forEach((friendItem)=> {
+        friendItem.moveDown();
+        
+
+        if (friendItem.positionX < player.positionX + player.width &&
+            friendItem.positionX + friendItem.width > player.positionX &&  //we move a new element and we check if there is a collision all wihtin the same loop
+            friendItem.positionY < player.positionY + player.height &&
+            friendItem.height + friendItem.positionY > player.positionY) {
+            console.log("Love You!");
+            scoreUp()
+            
+            friendItem.domElement.remove()
+            // POINTS
+            }
+            //detect if obstacle needs to be removed once out of sight from the viewport. for that obstacle first needs to reach  the Y axis = 0 adn then we substract teh heigth of the obstacle, so taht it dissapears once we dont see it
+            if (friendItem.positionY < 0 - friendItem.height) {
+                //1. remove from the array of obstacles. we can use .shift in order to delete teh 1st element of our array (which is the first one reaching teh bottom of the viewport)
+                    friendsArr.shift();
+
+
+                //2. remove the obstacle elm from the dom with the .remove() method that we can use to this DOM element
+                //teh obsctacle  we want to delete is in the instance 'friendItem' of the class 'Obstacle'. thats how we can accesss positionY, for example.
+                //the DOM element of that obstacle is in the 'domElement'. now we can apply the remove() method to that.
+                friendItem.domElement.remove()
+}                        
+        
+
+    });
+
+},200);
+
+
+
+// *********************
+// *********************
+// ***** Counter *******
+// *********************
+// *********************
+
+//Create a DOM Element displaying 0
+//if collision with friend counter++
+let score = 0;
+function scoreUp (){
+    score += 1;
+    console.log(score)
+}
+
+
+    
 
 
 

@@ -17,5 +17,13 @@ body {
 #player {
     background-color: rgb(236, 177, 118);
     position: absolute;
+    src: ;
    
+}
+
+#score {
+    background-color: #8697b1;
+    height: 5vh; 
+    width: 5vw;
+    position: relative; 
 }
