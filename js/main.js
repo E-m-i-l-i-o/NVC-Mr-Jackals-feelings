@@ -213,7 +213,7 @@ setInterval(() => {
 
 // move those friends
 setInterval(()=>{
-    friendsArr.forEach((friendItem)=> {
+    friendsArr.forEach((friendItem, index)=> {
         friendItem.moveDown();
         
 
@@ -222,21 +222,22 @@ setInterval(()=>{
             friendItem.positionY < player.positionY + player.height &&
             friendItem.height + friendItem.positionY > player.positionY) {
             console.log("Love You!");
-            scoreUp()
-            
+            scoreUp();
+            friendsArr.splice(index, 1); 
             friendItem.domElement.remove()
             // POINTS
             }
             //detect if obstacle needs to be removed once out of sight from the viewport. for that obstacle first needs to reach  the Y axis = 0 adn then we substract teh heigth of the obstacle, so taht it dissapears once we dont see it
             if (friendItem.positionY < 0 - friendItem.height) {
                 //1. remove from the array of obstacles. we can use .shift in order to delete teh 1st element of our array (which is the first one reaching teh bottom of the viewport)
-                    friendsArr.shift();
+                friendItem.domElement.remove()
 
 
                 //2. remove the obstacle elm from the dom with the .remove() method that we can use to this DOM element
                 //teh obsctacle  we want to delete is in the instance 'friendItem' of the class 'Obstacle'. thats how we can accesss positionY, for example.
                 //the DOM element of that obstacle is in the 'domElement'. now we can apply the remove() method to that.
-                friendItem.domElement.remove()
+               // friendItem.domElement.remove()
+                //  friendsArr.splice(index, 1); 
 }                        
         
 
