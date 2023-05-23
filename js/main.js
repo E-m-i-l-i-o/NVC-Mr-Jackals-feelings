@@ -96,7 +96,7 @@ class Obstacles {
          this.domElement.style.height = this.height + "vh";
          this.domElement.style.left = this.positionX +"vw";
          this.domElement.style.bottom = this.positionY + 'vh';
-         this.domElement.style.backgroundColor = 'red'
+         this.domElement.style.backgroundColor = '#96070c'
          this.domElement.style.position = 'absolute'
  
          //step3: append to the dom: `parentElm.appendChild()`
@@ -158,7 +158,7 @@ function gameOver(){
 
 // *********************
 // *********************
-// *********************
+// ***   FRIENDS   *****
 // *********************
 // *********************
 
@@ -188,7 +188,7 @@ class Friends {
          this.domElement.style.height = this.height + "vh";
          this.domElement.style.left = this.positionX +"vw";
          this.domElement.style.bottom = this.positionY + 'vh';
-         this.domElement.style.backgroundColor = 'green'
+         this.domElement.style.backgroundColor = '#068031'
          this.domElement.style.position = 'absolute'
  
          //step3: append to the dom: `parentElm.appendChild()`
@@ -248,7 +248,7 @@ setInterval(()=>{
 
 // *********************
 // *********************
-// ***** Counter *******
+// ***** SCORE *******
 // *********************
 // *********************
 
@@ -258,10 +258,45 @@ let score = 0;
 function scoreUp (){
     score += 1;
     console.log(score)
+    visibleScore.updateScore();
+    return score
 }
 
+class Score {
+    constructor (){
+        this.height = 5;
+        this.width = 7;
+        this.positionX = 85;
+        this.positionY =92;
 
-    
+        this.domElement = null;
+
+        this.createDomElement()
+    }
+
+
+    createDomElement(){
+            // 
+                this.domElement = document.createElement('div');
+            //
+                this.domElement.id = 'score';
+                this.domElement.style.width = this.width + "vw" ;
+                this.domElement.style.height = this.height + "vh";
+                this.domElement.style.bottom = this.positionY + 'vh'; 
+                this.domElement.style.left = this.positionX + "vw"; 
+                this.domElement.style.backgroundColor = '#8697b1';
+                this.domElement.style.position = 'absolute';
+                board.appendChild(this.domElement);
+
+                this.updateScore();
+               
+
+    }
+        updateScore () {
+        this.domElement.innerText = score;
+    }
+} 
+const visibleScore = new Score();
 
 
 

@@ -22,8 +22,8 @@ body {
 }
 
 #score {
-    background-color: #8697b1;
-    height: 5vh; 
-    width: 5vw;
+    background-color: #08101b;
+    /* height: 5vh;  */
+    /* width: 5vw; */
     position: relative; 
 }
