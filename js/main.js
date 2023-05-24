@@ -2,10 +2,10 @@ const board = document.querySelector("#board")
 
 class Player {
     constructor (){
-        this.height = 3;
-        this.width = 5;
-        this.positionX = 50 - this.width/2;
-        this.positionY = 10;
+        this.height = 12;
+        this.width = 6;
+        this.positionX = 94;
+        this.positionY = 0;
 
         this.domElement = null;
 
@@ -18,6 +18,13 @@ class Player {
                 this.domElement = document.createElement('div');
             // step2: add content or modify (ex. innerHTML...)
                 this.domElement.id = 'player';
+
+
+                // const newImage = document.createElement(img);
+                //  newImage.setAttribute("src", "./images/playerGiraffe.png")
+                //  this.domElement.style.backgroundImage = "url ("./images/playerGiraffe.png")";
+                
+
                 this.domElement.style.width = this.width + "vw" ;
                 this.domElement.style.height = this.height + "vh";
                 this.domElement.style.bottom = this.positionY + 'vh'; 
@@ -25,26 +32,26 @@ class Player {
 
 
                  //step3: append to the dom: `parentElm.appendChild()`. By adding we are making the player visible
-                // const parentElm = document.getElementById("board");
+                const parentElm = document.getElementById("board");
                 board.appendChild(this.domElement);
 
 
     }
 
     moveLeft(){
-        this.positionX= this.positionX - 1;
+        this.positionX= this.positionX - 2;
         this.domElement.style.left = this.positionX + 'vw';
     }
     moveRight(){
-        this.positionX   =     this.positionX + 1;
+        this.positionX   =     this.positionX + 2;
         this.domElement.style.left   = this.positionX + 'vw';
     }
     moveUp (){
-        this.positionY = this.positionY + 2;
+        this.positionY = this.positionY + 3;
         this.domElement.style.bottom = this.positionY + 'vh'
     }
     moveDown() {
-        this.positionY = this.positionY - 2;
+        this.positionY = this.positionY - 3;
         this.domElement.style.bottom = this.positionY + "vh"
     }
 
@@ -62,12 +69,16 @@ const player = new Player();
 document.addEventListener("keydown", (bananaEvent) => {
     
     if (bananaEvent.code === "ArrowLeft") {
+      if(player.positionX > 0) 
       player.moveLeft();
     } else if (bananaEvent.code === "ArrowRight") {
+        if(player.positionX < 94)
       player.moveRight();
     } else if (bananaEvent.code === "ArrowUp") {
+        if(player.positionY < 96) 
         player.moveUp();
     } else if (bananaEvent.code === "ArrowDown") {
+        if(player.positionY > 0) 
         player.moveDown()
     }
   });
@@ -76,7 +87,7 @@ document.addEventListener("keydown", (bananaEvent) => {
 class Obstacles {
     
     constructor (){
-        this.width = 10;
+        this.width = 9;
         this.height = 3; 
         this.positionX = Math.floor(Math.random()* 100 - this.width);
         this.positionY = 100;
@@ -96,7 +107,8 @@ class Obstacles {
          this.domElement.style.height = this.height + "vh";
          this.domElement.style.left = this.positionX +"vw";
          this.domElement.style.bottom = this.positionY + 'vh';
-         this.domElement.style.backgroundColor = '#96070c'
+         //this.domElement.style.backgroundColor = '#96070c'
+         this.domElement.style.imageRendering
          this.domElement.style.position = 'absolute'
  
          //step3: append to the dom: `parentElm.appendChild()`
@@ -129,8 +141,8 @@ setInterval(()=>{
             obstacleItem.positionY < player.positionY + player.height &&
             obstacleItem.height + obstacleItem.positionY > player.positionY) {
             console.log("game over my fren");
-            gameOver()
-            // location.href= 'game-over.html' //  send player to start again
+            //gameOver()
+            location.href= 'startpage.html' //  send player to start again
             }
             //detect if obstacle needs to be removed once out of sight from the viewport. for that obstacle first needs to reach  the Y axis = 0 adn then we substract teh heigth of the obstacle, so taht it dissapears once we dont see it
             if (obstacleItem.positionY < 0 - obstacleItem.height) {
@@ -149,11 +161,13 @@ setInterval(()=>{
 },200);
 
 
-function gameOver(){
-    const divGameOver = document.querySelector("#game-over")
-    board.style.display = "none"
-    divGameOver.style.display = "block"
-}
+// function gameOver(){
+//     const divGameOver = document.querySelector("#game-over")
+//     board.style.display = "none"
+//     divGameOver.style.display = "block"
+//     //divGameOver.style.backgroundColor = '#8697b1'
+// //     //divGameOver.style.width = 100
+// }
 
 
 // *********************
@@ -163,18 +177,44 @@ function gameOver(){
 // *********************
 
 
+//feelingsArray
+const myFeelings = ['affectionate', 'compassionate', 'friendly', 'loving', 'open','hearted','sympathetic','tender',
+'warm','engaged','absorbed','alert','curious','engrossed','enchanted','entranced','fascinated','interested',
+'intrigued','involved','spellbound','stimulated','hopeful','expectant','encouraged','optimistic','confident',
+'empowered','open','proud','safe','secure','excited','amazed','animated','ardent', 'aroused', 'astonished', 'dazzled',
+ 'eager', 'energetic', 'enthusiastic', 'giddy', 'invigorated', 'lively', 'passionate', 'surprised', 'vibrant', 'grateful',
+  'appreciative', 'moved', 'thankful', 'touched', 'inspired', 'amazed', 'awed', 'wonder', 'joyful', 'amused', 'delighted', 
+  'glad', 'happy', 'jubilant', 'pleased', 'tickled', 'exhilarated', 'blissful', 'ecstatic', 'elated', 'enthralled', 'exuberant',
+   'radiant', 'rapturous', 'thrilled', 'peaceful', 'calm', 'clearheaded', 'comfortable', 'centered', 'content', 'equanimous', 
+   'fulfilled', 'mellow', 'quiet', 'relaxed', 'relieved', 'satisfied', 'serene', 'still', 'tranquil', 'trusting', 'refreshed',
+    'enlivened', 'rejuvenated', 'renewed', 'rested', 'restored', 'revived','afraid', 'apprehensive', 'dread', 'foreboding', 
+    'frightened', 'mistrustful', 'panicked', 'petrified', 'scared', 'suspicious', 'terrified', 'wary', 'worried', 'annoyed', 
+    'aggravated', 'dismayed', 'disgruntled', 'displeased', 'exasperated', 'frustrated', 'impatient', 'irritated', 'irked',
+     'angry', 'enraged', 'furious', 'incensed', 'indignant', 'irate', 'livid', 'outraged', 'resentful', 'aversion', 'animosity', 
+     'appalled', 'contempt', 'disgusted', 'dislike', 'hate', 'horrified', 'hostile', 'repulsed','confused', 'ambivalent', 
+     'baffled', 'bewildered', 'dazed', 'hesitant', 'lost', 'mystified', 'perplexed', 'puzzled', 'torn','disconnected','alienated', 
+     'aloof' ,'apathetic', 'bored', 'cold', 'detached', 'distant', 'distracted', 'indifferent', 'numb', 'removed', 'uninterested', 
+     'withdrawn', 'disquiet', 'agitated','alarmed', 'discombobulated', 'disconcerted', 'disturbed', 'perturbed', 'rattled', 'restless', 
+     'shocked', 'startled', 'surprised', 'troubled', 'turbulent', 'turmoil', 'uncomfortable', 'uneasy', 'unnerved', 'unsettled', 'upset', 
+     'embarrassed', 'ashamed', 'chagrined', 'flustered', 'guilty', 'mortified', 'self_conscious','fatigue','beat', 'burnt_out', 'depleted', 
+     'exhausted', 'lethargic', 'listless', 'sleepy', 'tired', 'weary', 'worn_out', 'pain', 'agony', 'anguished', 'bereaved', 
+     'devastated', 'grief', 'heartbroken', 'hurt', 'lonely', 'miserable', 'regretful', 'remorseful', 'sad', 'depressed', 'dejected', 
+     'despair', 'despondent', 'disappointed', 'discouraged', 'disheartened', 'forlorn', 'gloomy', 'heavy', 'hearted', 'hopeless', 
+     'melancholic', 'unhappy', 'wretched', 'tense', 'anxious', 'cranky', 'distressed', 'distraught', 'edgy', 'fidgety', 'frazzled',
+     'irritable', 'jittery', 'nervous', 'overwhelmed','restless', 'stressed_out', 'vulnerable', 'fragile', 'guarded', 'helpless', 'insecure',
+      'leery', 'reserved', 'sensitive', 'shaky', 'yearning', 'envious', 'jealous', 'longing', 'nostalgic', 'pining', 'wistful']
 
 
 class Friends {
     
     constructor (){
-        this.width = 10;
+        this.width = 7;
         this.height = 3; 
         this.positionX = Math.floor(Math.random()* 100 - this.width);
         this.positionY = 100;
-
-
         this.domElement = null;
+        //feelings array
+        this.banana = myFeelings;
 
         this.createDomElement();
     }
@@ -188,9 +228,13 @@ class Friends {
          this.domElement.style.height = this.height + "vh";
          this.domElement.style.left = this.positionX +"vw";
          this.domElement.style.bottom = this.positionY + 'vh';
-         this.domElement.style.backgroundColor = '#068031'
+         this.domElement.style.backgroundColor = '#8697b100'
          this.domElement.style.position = 'absolute'
- 
+        //feelings Array
+         const randomIndex = Math.floor(Math.random() * this.banana.length);
+         const randomWord = this.banana[randomIndex];
+         this.domElement.innerHTML = randomWord;
+
          //step3: append to the dom: `parentElm.appendChild()`
         const parentElm = document.getElementById('board') 
          parentElm.appendChild(this.domElement);
@@ -285,7 +329,7 @@ class Score {
                 this.domElement.style.height = this.height + "vh";
                 this.domElement.style.bottom = this.positionY + 'vh'; 
                 this.domElement.style.left = this.positionX + "vw"; 
-                this.domElement.style.backgroundColor = '#8697b1';
+                this.domElement.style.backgroundColor = '#8697b100';
                 this.domElement.style.position = 'absolute';
                 board.appendChild(this.domElement);
 
@@ -300,5 +344,47 @@ class Score {
 const visibleScore = new Score();
 
 
+
+// *********************
+// ***** GAME OVER *****
+// *********************
+// *********************
+// class PlayAgain {
+
+
+//  buttonDomElement(){
+
+// const playAgain = document.getElementById('playAgain')
+// playAgain.appendChild(xxxx);
+
+// playAgain.addEventListener ('mouseover', function(){
+//     this.style.color = "red"
+// })
+// playAgain.addEventListener('mouseout', function() {
+//     this.style.color = ""; 
+// });
+// playAgain.addEventListener("click", function (){
+//     window.location.href = 'index.html ';
+// });
+// playAgain.addEventListener('mouseout', function() {
+//     this.style.color = ""; 
+// });
+// }
+// }
+// const buttonDomElement = new PlayAgain()
+
+
+
+// const gameOverText = document.getElementById('gameOverText');
+// const tryAgainBtn = document.getElementById('tryAgainBtn');
+
+// gameOverText.style.textAlign = "center";
+// gameOverText.style.color = '#96070c';
+
+// tryAgainBtn.style.display  = 'block';
+// tryAgainBtn.style.textAlign = 'center';
+// tryAgainBtn.style.backgroundColor = 'white';
+// tryAgainBtn.style.color = "black";
+// tryAgainBtn.style. textDecoration = 'none';
 
 

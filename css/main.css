@@ -2,28 +2,125 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    
-}
-#board {
-    background-color: #8697b1;
-    height: 100vh; 
-    /* relative units for responsive / pixels for non responsive design// = 100% of the vh = viewportsize */
-    width: 100vw;
-    position: relative; 
-    /* //defines that this container is teh point of reference for the player */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    /* overflow:hidden; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../images/blue-pink-watery-background.jpg");
 }
 
+
+
+
+
+
+
+
 #player {
-    background-color: rgb(236, 177, 118);
+    background-color: #8697b100;
     position: absolute;
-    src: ;
-   
+    background-image: url("../images/playerGiraffe.png");
+    /* background-image: url("../images/funny-giraffe.jpg"); */
+    background-size: cover;
+    background-position: center;
 }
 
 #score {
-    background-color: #08101b;
-    /* height: 5vh;  */
-    /* width: 5vw; */
-    position: relative; 
+
+    position: relative;
+    background-color: #8697b100;
+}
+
+#board {
+    background-color: #8697b100;
+    height: 100vh;
+    /* relative units for responsive / pixels for non responsive design// = 100% of the vh = viewportsize */
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    /* //defines that this container is teh point of reference for the player */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../images/wepik-export-20230524160116sL6M.jpeg");
+}
+
+
+
+
+
+
+.obstacle {
+    /* background-color: #8697b100; */
+    /* position: absolute;
+    background-size: cover;
+    background-position: center; */
+    background-image: url("../images/wood.jpg");
+    box-shadow: 3px 3px 3px #4e4444;
+    /* position: absolute;
+    /* background-image: url("../images/playerGiraffe.png"); 
+
+    background-size: cover;
+    background-position: center; 
+*/
+}
+
+
+/* #buttonContainer {
+    
+    color: #515e71;
+    position: relative;
+    display: flex; 
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}  */
+
+#playAgain {
+
+    position: fixed;
+    top: 66vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+.play-link {
+    text-decoration: none;
+    color: #343333;
+
+
+}
+
+#TitleMrJackal {
+    color: #094555;
+    position: fixed;
+    top: 10vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/landing\ page\ pic\ giraffe\ jackal.jpeg );
+    background-size: 80% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #a1abb3;
+    overflow: hidden;
+    height: 100vh;
+    /* position: relative;  */
+
+}
+
+.friends {
+    position: absolute;
+    font-size: small;
+
 }
