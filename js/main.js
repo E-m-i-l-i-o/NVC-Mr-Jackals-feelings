@@ -93,7 +93,7 @@ class Obstacles {
     constructor (){
         this.width = 9;
         this.height = 5; 
-        this.positionX = Math.floor(Math.random()* 100 - this.width);
+        this.positionX = Math.floor(Math.random()* (100 - this.width));
         this.positionY = 100;
 
 
@@ -178,7 +178,7 @@ class ObstaclesTwo {
     constructor (){
         this.width = 7 ;
         this.height = 10; 
-        this.positionX = Math.floor(Math.random()* 100 - this.width);
+        this.positionX = Math.floor(Math.random()* (100 - this.width));
         this.positionY = 100;
 
 
@@ -266,7 +266,7 @@ class ObstaclesThree {
     constructor (){
         this.width = 3 ;
         this.height = 22; 
-        this.positionX = Math.floor(Math.random()* 100 - this.width);
+        this.positionX = Math.floor(Math.random()* (100 - this.width));
         this.positionY = 100;
 
 
@@ -340,16 +340,6 @@ setInterval(()=>{
 
 
 
-
-// function gameOver(){
-//     const divGameOver = document.querySelector("#game-over")
-//     board.style.display = "none"
-//     divGameOver.style.display = "block"
-//     //divGameOver.style.backgroundColor = '#8697b1'
-// //     //divGameOver.style.width = 100
-// }
-
-
 // *********************
 // *********************
 // ***   FRIENDS   *****
@@ -390,7 +380,7 @@ class Friends {
     constructor (){
         this.width = 7;
         this.height = 3; 
-        this.positionX = Math.floor(Math.random()* 100 - this.width);
+        this.positionX = Math.floor(Math.random()* (100 - this.width));
         this.positionY = 100;
         this.domElement = null;
         //feelings array
@@ -484,8 +474,14 @@ function scoreUp (){
     score += 1;
     console.log(score)
     visibleScore.updateScore();
-    return score
-}
+    
+        return score;
+
+    }
+
+    
+    
+
 
 class Score {
     constructor (){
@@ -524,47 +520,5 @@ class Score {
 const visibleScore = new Score();
 
 
-
-// *********************
-// ***** GAME OVER *****
-// *********************
-// *********************
-// class PlayAgain {
-
-
-//  buttonDomElement(){
-
-// const playAgain = document.getElementById('playAgain')
-// playAgain.appendChild(xxxx);
-
-// playAgain.addEventListener ('mouseover', function(){
-//     this.style.color = "red"
-// })
-// playAgain.addEventListener('mouseout', function() {
-//     this.style.color = ""; 
-// });
-// playAgain.addEventListener("click", function (){
-//     window.location.href = 'index.html ';
-// });
-// playAgain.addEventListener('mouseout', function() {
-//     this.style.color = ""; 
-// });
-// }
-// }
-// const buttonDomElement = new PlayAgain()
-
-
-
-// const gameOverText = document.getElementById('gameOverText');
-// const tryAgainBtn = document.getElementById('tryAgainBtn');
-
-// gameOverText.style.textAlign = "center";
-// gameOverText.style.color = '#96070c';
-
-// tryAgainBtn.style.display  = 'block';
-// tryAgainBtn.style.textAlign = 'center';
-// tryAgainBtn.style.backgroundColor = 'white';
-// tryAgainBtn.style.color = "black";
-// tryAgainBtn.style. textDecoration = 'none';
 
 
