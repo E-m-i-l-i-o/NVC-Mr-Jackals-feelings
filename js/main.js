@@ -319,7 +319,7 @@ setInterval(()=>{
             obstacleItem.height + obstacleItem.positionY > player.positionY) {
             console.log("game over my fren");
             //gameOver()
-            location.href= 'startpage.html' //  send player to start again
+            location.href= 'index.html' //  send player to start again
             }
             //detect if obstacle needs to be removed once out of sight from the viewport. for that obstacle first needs to reach  the Y axis = 0 adn then we substract teh heigth of the obstacle, so taht it dissapears once we dont see it
             if (obstacleItem.positionY < 0 - obstacleItem.height) {
