@@ -153,17 +153,19 @@ body {
 
 }
 
-footer{
-    position: relative;
-    bottom: 0;
+#instructions{
+     position: relative;
+   top: 0%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%); 
+    
     width: 100%;
     padding:10px;
     text-align: center;
-    font-size: small;
-    color: #3c5061;
-    text-shadow: 3px 3px 3px #ccc8c8; 
+    font-size: 12px;
+    font-weight: bold;
+    color: #183854;
+    text-shadow: 3px 3px 3px #ccc8c8;  
     
     
 
