@@ -3,7 +3,7 @@ body {
     padding: 0;
     background-color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 18px;
+    font-size: large;
     /* overflow:hidden; */
     background-repeat: no-repeat;
     background-position: center;
@@ -122,7 +122,7 @@ body {
 
 .friends {
     position: absolute;
-    font-size: small;
+    font-size:medium;
 
 }
 
