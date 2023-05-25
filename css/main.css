@@ -23,7 +23,7 @@ body {
     position: absolute;
     background-image: url("../images/playerGiraffe.png");
     /* background-image: url("../images/funny-giraffe.jpg"); */
-    background-size: cover;
+    background-size:cover;
     background-position: center;
 }
 
@@ -60,6 +60,7 @@ body {
     background-size: cover;
     background-position: center; */
     background-image: url("../images/wood.jpg");
+    background-size: 300px;
     box-shadow: 3px 3px 3px #4e4444;
     /* position: absolute;
     /* background-image: url("../images/playerGiraffe.png"); 
@@ -133,9 +134,18 @@ body {
 
 .obstacleTwo{
     background-image: url("../images/hiclipart.com\ \(4\).png");
-    background-size: 43px;
+    background-size: 60px;
     background-position: center;
-     /* box-shadow: 3px 3px 3px #4e4444;  */
+      /* box-shadow: 3px 3px 3px #4e4444;  */ 
+    background-repeat: no-repeat;
+
+}
+
+.obstacleThree{
+    background-image: url("../images/leaf.png");
+    background-size: cover;
+    background-position: center;
+      /* box-shadow: 3px 3px 3px #4e4444;  */ 
     background-repeat: no-repeat;
 
 }
