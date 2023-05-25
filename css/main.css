@@ -92,7 +92,7 @@ body {
 
 .play-link {
     text-decoration: none;
-    color: #343333;
+    color: #742020;
 
 
 }
@@ -104,6 +104,8 @@ body {
     left: 50vw;
     transform: translate(-50%, -50%);
     font-style: normal;
+    text-shadow: 3px 3px 3px #79a4b5; 
+
 }
 
 body {
@@ -129,7 +131,7 @@ body {
 
 .play-link{
     /* box-shadow: 3px 3px 3px 3px #4e4444;  */
-    text-shadow: 4px 4px 4px #cbc7c7;  
+    text-shadow: 4px 4px 4px #d6cdcd;  
    
 }
 
@@ -160,7 +162,8 @@ footer{
     padding:10px;
     text-align: center;
     font-size: small;
-    text-shadow: 4px 4px 4px #ebe7e7; 
+    color: #3c5061;
+    text-shadow: 3px 3px 3px #ccc8c8; 
     
     
 
