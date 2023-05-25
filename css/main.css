@@ -124,3 +124,18 @@ body {
     font-size: small;
 
 }
+
+.play-link{
+    /* box-shadow: 3px 3px 3px 3px #4e4444;  */
+    text-shadow: 4px 4px 4px #cbc7c7;  
+   
+}
+
+.obstacleTwo{
+    background-image: url("../images/hiclipart.com\ \(4\).png");
+    background-size: 43px;
+    background-position: center;
+     /* box-shadow: 3px 3px 3px #4e4444;  */
+    background-repeat: no-repeat;
+
+}
