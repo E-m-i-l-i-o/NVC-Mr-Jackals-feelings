@@ -110,7 +110,8 @@ body {
     margin: 0;
     padding: 0;
     background-image: url(../images/landing\ page\ pic\ giraffe\ jackal.jpeg );
-    background-size: 80% auto;
+    /* background-size: 80% auto; */
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-color: #a1abb3;
@@ -150,9 +151,21 @@ body {
 
 }
 
-/* #instructions{
-    position: fixed
-    top: ;
+footer{
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding:10px;
+    text-align: center;
+    font-size: small;
+    text-shadow: 4px 4px 4px #ebe7e7; 
+    
     
 
-} */
+   
+
+    
+
+}
