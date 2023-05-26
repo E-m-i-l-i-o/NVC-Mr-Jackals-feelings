@@ -7,7 +7,7 @@ Latest neuroscience of emotions defends that increasing your vocabulary of emoti
 
 The name and characters in this game are taken from my practice of Non Violent Communication (NVC). NVC is a communicative practice developed by psychologist Marshall Roshenberg, PhD. He chose to use two animals to describe two kinds of language. The jackal represents competition and jackal language is continuously judging, criticising, analysing, moralising and accusing. Jackal language can be spoken to others and to oneself. On the other hand, Rosenberg chose the symbol of the giraffe because it is the land animal with the biggest heart and, in this context, stands for compassionate communication. 
 
-One of the main practices proposed by NVC is learning to guess what feelings might Mr. Jackal be experiencing under all the barking and howling. But make no mistake, both giraffe and jackal really want to meet that person's most basic needs. Jackal language is neither worse nor better than giraffe language, it's just a tragic expression of Mr Jackal's needs while the giraffe language does it compassionately.
+One of the main practices proposed by NVC is learning to guess what feelings might Mr. Jackal be experiencing under all the barking and howling. But make no mistake, jackal language is neither worse nor better than giraffe language, it's just a tragic expression of Mr Jackal's needs, while the giraffe language expresses those needs compassionately.
 
 In this game, the player is a giraffe who tries to avoid obstacles while trying to 'hear' the essence of Mr Jackal's feelings.
 
