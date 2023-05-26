@@ -18,18 +18,11 @@ class Player {
                 this.domElement = document.createElement('div');
             // step2: add content or modify (ex. innerHTML...)
                 this.domElement.id = 'player';
-
-
-                // const newImage = document.createElement(img);
-                //  newImage.setAttribute("src", "./images/playerGiraffe.png")
-                //  this.domElement.style.backgroundImage = "url ("./images/playerGiraffe.png")";
-                
-
+       
                 this.domElement.style.width = this.width + "vw" ;
                 this.domElement.style.height = this.height + "vh";
                 this.domElement.style.bottom = this.positionY + 'vh'; 
                 this.domElement.style.left = this.positionX + "vw"; 
-
 
                  //step3: append to the dom: `parentElm.appendChild()`. By adding we are making the player visible
                 const parentElm = document.getElementById("board");
@@ -65,7 +58,6 @@ const player = new Player();
 
 // // attach event listeners...
 // elm.addEventListener(nameOfEvent, code)
-// consider switch case with breaks to express it nicely
 document.addEventListener("keydown", (bananaEvent) => {
     
     if (bananaEvent.code === "ArrowLeft") {

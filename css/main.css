@@ -1,86 +1,33 @@
+/* landing page */
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: large;
-    /* overflow:hidden; */
+    background-image: url(../images/landing\ page\ pic\ giraffe\ jackal.jpeg );
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    background-image: url("../images/blue-pink-watery-background.jpg");
-}
-
-
-
-
-
-
-
-
-#player {
-    background-color: #8697b100;
-    position: absolute;
-    background-image: url("../images/playerGiraffe.png");
-    /* background-image: url("../images/funny-giraffe.jpg"); */
-    background-size:cover;
-    background-position: center;
-}
-
-#score {
-
-    position: relative;
-    background-color: #8697b100;
-}
-
-#board {
-    background-color: #8697b100;
+    background-color: #a1abb3;
+    overflow: hidden;
     height: 100vh;
-    /* relative units for responsive / pixels for non responsive design// = 100% of the vh = viewportsize */
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    position: fixed;
-    /* //defines that this container is teh point of reference for the player */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url("../images/wepik-export-20230524160116sL6M.jpeg");
+
+
 }
 
-
-
-
-
-
-.obstacle {
-    /* background-color: #8697b100; */
-    /* position: absolute;
-    background-size: cover;
-    background-position: center; */
-    background-image: url("../images/wood.jpg");
-    background-size: 300px;
-    box-shadow: 3px 3px 3px #4e4444;
-    /* position: absolute;
-    /* background-image: url("../images/playerGiraffe.png"); 
-
-    background-size: cover;
-    background-position: center; 
-*/
-}
-
-
-/* #buttonContainer {
-    
-    color: #515e71;
+#instructions{
     position: relative;
-    display: flex; 
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}  */
+  top: 0%;
+   left: 50%;
+   transform: translate(-50%); 
+   width: 100%;
+   padding:10px;
+   text-align: center;
+   font-size: 12px;
+   font-weight: bold;
+   color: #183854;
+   text-shadow: 3px 3px 3px #ccc8c8;  
+
+}
 
 #playAgain {
 
@@ -93,9 +40,10 @@ body {
 .play-link {
     text-decoration: none;
     color: #742020;
-
+    text-shadow: 4px 4px 4px #d6cdcd; 
 
 }
+
 
 #TitleMrJackal {
     color: #094555;
@@ -108,18 +56,65 @@ body {
 
 }
 
+
+/* gamepage */
+
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../images/landing\ page\ pic\ giraffe\ jackal.jpeg );
-    /* background-size: 80% auto; */
-    background-size: 100%;
+    background-color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #a1abb3;
-    overflow: hidden;
+    background-size: cover;
+}
+
+#board {
+    background-color: #8697b100;
     height: 100vh;
-    /* position: relative;  */
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../images/wepik-export-20230524160116sL6M.jpeg");
+}
+
+
+#player {
+    background-color: #8697b100;
+    position: absolute;
+    background-image: url("../images/playerGiraffe.png");
+    background-size:cover;
+    background-position: center;
+}
+
+
+.obstacle {
+   
+    background-image: url("../images/wood.jpg");
+    background-size: 300px;
+    box-shadow: 3px 3px 3px #4e4444;
+    
+}
+
+.obstacleTwo{
+    background-image: url("../images/hiclipart.com\ \(4\).png");
+    background-size: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.obstacleThree{
+    background-image: url("../images/leaf.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 
@@ -129,48 +124,8 @@ body {
 
 }
 
-.play-link{
-    /* box-shadow: 3px 3px 3px 3px #4e4444;  */
-    text-shadow: 4px 4px 4px #d6cdcd;  
-   
-}
+#score {
 
-.obstacleTwo{
-    background-image: url("../images/hiclipart.com\ \(4\).png");
-    background-size: 60px;
-    background-position: center;
-      /* box-shadow: 3px 3px 3px #4e4444;  */ 
-    background-repeat: no-repeat;
-
-}
-
-.obstacleThree{
-    background-image: url("../images/leaf.png");
-    background-size: cover;
-    background-position: center;
-      /* box-shadow: 3px 3px 3px #4e4444;  */ 
-    background-repeat: no-repeat;
-
-}
-
-#instructions{
-     position: relative;
-   top: 0%;
-    left: 50%;
-    transform: translate(-50%); 
-    
-    width: 100%;
-    padding:10px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: bold;
-    color: #183854;
-    text-shadow: 3px 3px 3px #ccc8c8;  
-    
-    
-
-   
-
-    
-
+    position: relative;
+    background-color: #8697b100;
 }
